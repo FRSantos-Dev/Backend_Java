@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,5 +54,35 @@ public class UserController {
     @GetMapping("/users")
     public List<UserDTO> getUsers(){
         return users;
+    }
+
+    @GetMapping("users/{cpf}")
+    public UserDTO getUsersFilter(@PathVariable String cpf){
+
+        for(UserDTO userFilter:users){
+            if(userFilter.getCpf().equals(cpf)){
+                return userFilter;
+            }
+        }
+        return null;
+    }
+
+    @PostMapping("/newUser")
+    public UserDTO postUser(@RequestBody UserDTO userDTO){
+        userDTO.setDateRegistry(new Date());
+        users.add(userDTO);
+        return userDTO;
+    }
+
+    @DeleteMapping("/{cpf}")
+    public boolean remove(@PathVariable String cpf){
+
+        for(UserDTO userFilter : users){
+            if(userFilter.getCpf().equals(cpf)){
+                users.remove(userFilter);
+                return true;
+            }
+        }
+        return false;
     }
 }
