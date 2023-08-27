@@ -1,27 +1,64 @@
-package br.com.rocha.JavaBackend;
+package br.com.rocha.JavaBackend.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.annotation.PostConstruct;
+import br.com.rocha.JavaBackend.dto.UserDTO;
+import br.com.rocha.JavaBackend.service.UserService;
 
 @RestController
-@RequestMapping("/user")
+public class UserController{
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/user/")
+    public List<UserDTO> getUsers() {
+
+        List<UserDTO> users = userService.getAll();
+        return users;
+    }
+
+    @GetMapping("/user/{id}")
+    UserDTO findById(@PathVariable Long id){
+        return userService.findById(id);
+    }
+
+    @PostMapping("/user")
+    UserDTO newUser(@RequestBody UserDTO userDTO){
+        return userService.save(userDTO);
+    }
+
+    @GetMapping("user/cpf/{cpf}")
+    UserDTO findByCpf(@PathVariable String cpf){
+        return userService.findByCpf(cpf);
+    }
+
+    @DeleteMapping("/user/{id}")
+    UserDTO delete(@PathVariable Long id){
+        return userService.delete(id);
+    }
+
+    @GetMapping("/user/search")
+    public List<UserDTO> queryByName(@RequestParam(name = "name", required = true)String name){
+        return userService.queryByName(name);
+    }
+}
+/* @RequestMapping("/user")
 public class UserController {
 
-    public static List<UserDTO>users = new ArrayList<UserDTO>();
+    public static List<UserDTO> users = new ArrayList<UserDTO>();
 
     @PostConstruct
-    public void initiateList(){
+    public void initiateList() {
         UserDTO userDTO = new UserDTO();
         userDTO.setName("Eduardo");
         userDTO.setCpf("123");
@@ -52,15 +89,15 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<UserDTO> getUsers(){
+    public List<UserDTO> getUsers() {
         return users;
     }
 
     @GetMapping("users/{cpf}")
-    public UserDTO getUsersFilter(@PathVariable String cpf){
+    public UserDTO getUsersFilter(@PathVariable String cpf) {
 
-        for(UserDTO userFilter:users){
-            if(userFilter.getCpf().equals(cpf)){
+        for (UserDTO userFilter : users) {
+            if (userFilter.getCpf().equals(cpf)) {
                 return userFilter;
             }
         }
@@ -68,17 +105,17 @@ public class UserController {
     }
 
     @PostMapping("/newUser")
-    public UserDTO postUser(@RequestBody UserDTO userDTO){
+    public UserDTO postUser(@RequestBody UserDTO userDTO) {
         userDTO.setDateRegistry(new Date());
         users.add(userDTO);
         return userDTO;
     }
 
     @DeleteMapping("/{cpf}")
-    public boolean remove(@PathVariable String cpf){
+    public boolean remove(@PathVariable String cpf) {
 
-        for(UserDTO userFilter : users){
-            if(userFilter.getCpf().equals(cpf)){
+        for (UserDTO userFilter : users) {
+            if (userFilter.getCpf().equals(cpf)) {
                 users.remove(userFilter);
                 return true;
             }
@@ -86,3 +123,4 @@ public class UserController {
         return false;
     }
 }
+ */
