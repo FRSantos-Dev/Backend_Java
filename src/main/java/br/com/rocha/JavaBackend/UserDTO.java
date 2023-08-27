@@ -2,6 +2,8 @@ package br.com.rocha.JavaBackend;
 
 import java.util.Date;
 
+import br.com.rocha.JavaBackend.model.User;
+
 public class UserDTO {
 
     private String name;
@@ -57,5 +59,16 @@ public class UserDTO {
 
     public void setDateRegistry(Date dateRegistry) {
         this.dateRegistry = dateRegistry;
+    }
+
+    public static UserDTO convert(User user){
+        UserDTO userDTO = new UserDTO();
+        userDTO.setName(user.getName());
+        userDTO.setCpf(user.getCpf());
+        userDTO.setAdress(user.getAdress());
+        userDTO.setEmail(user.getEmail());
+        userDTO.setTelephone(user.getTelephone());
+        userDTO.setDateRegistry(user.getDateRegistry());
+        return userDTO;
     }
 }
