@@ -61,7 +61,7 @@ public class UserDTO {
         this.dateRegistry = dateRegistry;
     }
 
-    public static UserDTO convert(User user){
+    public static UserDTO convert(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setName(user.getName());
         userDTO.setCpf(user.getCpf());
