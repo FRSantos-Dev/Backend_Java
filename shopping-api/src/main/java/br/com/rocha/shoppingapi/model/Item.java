@@ -12,17 +12,20 @@ public class Item {
     public String getProductIdentifier() {
         return productIdentifier;
     }
+
     public void setProductIdentifier(String productIdentifier) {
         this.productIdentifier = productIdentifier;
     }
+
     public Float getPrice() {
         return price;
     }
+
     public void setPrice(Float price) {
         this.price = price;
     }
 
-    public static Item convert(ItemDTO ItemDTO){
+    public static Item convert(ItemDTO ItemDTO) {
 
         Item item = new Item();
         item.setProductIdentifier(ItemDTO.getProductIdentifier());
@@ -30,6 +33,5 @@ public class Item {
 
         return item;
     }
-    
-    
+
 }

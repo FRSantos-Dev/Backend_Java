@@ -16,7 +16,7 @@ import jakarta.persistence.JoinColumn;
 
 @Entity(name = "shop")
 public class Shop {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -68,16 +68,16 @@ public class Shop {
         this.items = items;
     }
 
-    public static Shop convert(ShopDTO shopDTO){
+    public static Shop convert(ShopDTO shopDTO) {
         Shop shop = new Shop();
         shop.setUserIdentifier(shopDTO.getUserIdentifier());
         shop.setTotal(shopDTO.getTotal());
         shop.setDate(shopDTO.getDate());
         shop.setItems(shopDTO
-                            .getItems()
-                            .stream()
-                            .map(Item::convert)
-                            .collect(Collectors.toList()));
+                .getItems()
+                .stream()
+                .map(Item::convert)
+                .collect(Collectors.toList()));
 
         return shop;
     }

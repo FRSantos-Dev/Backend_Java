@@ -9,12 +9,12 @@ import br.com.rocha.shoppingapi.model.Shop;
 
 public interface ShopRepository extends JpaRepository<Shop, Long> {
 
-    //recupera as compras de um usuário especifico.
+    // recupera as compras de um usuário especifico.
     public List<Shop> findAllByUserIdentifier(String userIdentifier);
 
-    //busca todas as compras que tenham um valor total que o valor passado.
+    // busca todas as compras que tenham um valor total que o valor passado.
     public List<Shop> findAllByTotalGReaterThan(Float total);
-    
-    //retorna todas as compras a partir de uma data especifica.
-    public List<Shop> findAllByDateGreaterThanEquals(Date date); 
+
+    // retorna todas as compras a partir de uma data especifica.
+    public List<Shop> findAllByDateGreaterThanEquals(Date date);
 }
