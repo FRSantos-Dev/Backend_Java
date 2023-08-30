@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.rocha.shoppingapi.model.Shop;
 
-public interface ShopRepository extends JpaRepository<Shop, Long> {
+public interface ShopRepository extends JpaRepository<Shop, Long>, ReportRepository {
 
     // recupera as compras de um usuário especifico.
     public List<Shop> findAllByUserIdentifier(String userIdentifier);
