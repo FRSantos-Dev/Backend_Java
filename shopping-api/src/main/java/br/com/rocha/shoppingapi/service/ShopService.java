@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.rocha.shoppingapi.dto.ShopDTO;
+import br.com.rocha.shoppingapi.dto.ShopReportDTO;
 import br.com.rocha.shoppingapi.model.Shop;
 import br.com.rocha.shoppingapi.repository.ShopRepository;
 
@@ -61,6 +62,19 @@ public class ShopService {
         shop = shopRepository.save(shop);
 
         return shopDTO.convert(shop);
-
     }
+
+    public List<ShopDTO> getShopsByFilter(Date starDate, Date endDate, Float minValue){
+        List<Shop> shops = reportRepository.getShopByFilters(starDate, endDate, minValue);
+
+        return shops
+                    .stream()
+                    .map(DTOConverter::convert)
+                    .collect(Collectors.toList());
+    }
+
+    public ShopReportDTO getReportByDate(Date starDate, Date endDate){
+        return reportRepository.getReportByDate(starDate, endDate);
+    }
+
 }
