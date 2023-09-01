@@ -20,36 +20,29 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/product")
+    @GetMapping("/products")
     public List<ProductDTO> getProducts() {
-
-        List<ProductDTO> products = productService.getAll();
-
-        return products;
+        return productService.getAll();
     }
 
-    @GetMapping("/product/category/{categoryId}")
-    public List<ProductDTO> getProductByCategory(@PathVariable Long categoryId){
-
-        List<ProductDTO> products = productService.getProductByCategoryId(categoryId);
-
-        return products;
+    @GetMapping("/products/categories/{categoryId}")
+    public List<ProductDTO> getProductsByCategories(@PathVariable Long categoryId) {
+        return productService.getProductByCategoryId(categoryId);
     }
 
-    @GetMapping("/product/{productidentifier}")
-    ProductDTO FindByID(@PathVariable String productIdentifier) {
+    @GetMapping("/products/{productIdentifier}")
+    public ProductDTO getProduct(@PathVariable String productIdentifier) {
         return productService.findByProductIdentifier(productIdentifier);
     }
 
-    @PostMapping("/product")
+    @PostMapping("/products")
     ProductDTO newProduct(@Valid @RequestBody ProductDTO productDTO) {
-
         return productService.save(productDTO);
     }
 
-    @DeleteMapping("/product/{id}")
-    ProductDTO delete(@PathVariable Long id) throws ProductNotFoundException{
-
+    @DeleteMapping("/products/{id}")
+    ProductDTO delete(@PathVariable Long id) {
         return productService.delete(id);
     }
+
 }
