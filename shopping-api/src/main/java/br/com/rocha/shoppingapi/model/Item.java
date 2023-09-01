@@ -1,6 +1,6 @@
 package br.com.rocha.shoppingapi.model;
 
-import br.com.rocha.shoppingapi.dto.ItemDTO;
+
 import jakarta.persistence.Embeddable;
 
 @Embeddable
@@ -9,28 +9,29 @@ public class Item {
     private String productIdentifier;
     private Float price;
 
-    public String getProductIdentifier() {
-        return productIdentifier;
+    public Item() {
     }
 
-    public void setProductIdentifier(String productIdentifier) {
+    public String getProductIdentifier() {
+        return this.productIdentifier;
+    }
+
+    public void setProductIdentifier(final String productIdentifier) {
         this.productIdentifier = productIdentifier;
     }
 
     public Float getPrice() {
-        return price;
+        return this.price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(final Float price) {
         this.price = price;
     }
 
-    public static Item convert(ItemDTO ItemDTO) {
-
+    public static Item convert(final ItemDTO itemDTO) {
         Item item = new Item();
-        item.setProductIdentifier(ItemDTO.getProductIdentifier());
-        item.setPrice(ItemDTO.getPrice());
-
+        item.setProductIdentifier(itemDTO.getProductIdentifier());
+        item.setPrice(itemDTO.getPrice());
         return item;
     }
 

@@ -2,14 +2,16 @@ package br.com.rocha.userapi.model;
 
 import java.util.Date;
 
-import br.com.rocha.userapi.dto.UserDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class User {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
@@ -18,6 +20,22 @@ public class User {
     private String email;
     private String telephone;
     private Date dateRegistry;
+    private String key;
+
+    public User() {
+    }
+
+    public static User convert(final UserDTO userDTO) {
+        User user = new User();
+        user.setName(userDTO.getName());
+        user.setAdress(userDTO.getadress());
+        user.setCpf(userDTO.getCpf());
+        user.setEmail(userDTO.getEmail());
+        user.setTelephone(userDTO.getTelephone());
+        user.setDateRegistry(userDTO.getDateRegistry());
+        user.setKey(userDTO.getKey());
+        return user;
+    }
 
     public long getId() {
         return id;
@@ -75,14 +93,14 @@ public class User {
         this.dateRegistry = dateRegistry;
     }
 
-    public static User convert(UserDTO userDTO) {
-        User user = new User();
-        user.setName(userDTO.getName());
-        user.setCpf(userDTO.getCpf());
-        user.setAdress(userDTO.getAdress());
-        user.setEmail(userDTO.getEmail());
-        user.setTelephone(userDTO.getTelephone());
-        user.setDateRegistry(userDTO.getDateRegistry());
-        return user;
+    public String getKey() {
+        return key;
     }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    
+
 }
