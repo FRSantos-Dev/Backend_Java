@@ -1,10 +1,6 @@
-package br.com.rocha.userapi.dto;
+package br.com.rocha.shoppingclient.dto;
 
 import java.util.Date;
-
-import br.com.rocha.userapi.model.User;
-
-
 
 public class UserDTO {
 
@@ -14,6 +10,10 @@ public class UserDTO {
     private String email;
     private String telephone;
     private Date dateRegistry;
+    private String Key;
+
+    public UserDTO() {
+    }
 
     public String getName() {
         return name;
@@ -63,14 +63,12 @@ public class UserDTO {
         this.dateRegistry = dateRegistry;
     }
 
-    public static UserDTO convert(User user) {
-        UserDTO userDTO = new UserDTO();
-        userDTO.setName(user.getName());
-        userDTO.setCpf(user.getCpf());
-        userDTO.setAdress(user.getAdress());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setTelephone(user.getTelephone());
-        userDTO.setDateRegistry(user.getDateRegistry());
-        return userDTO;
+    public String getKey() {
+        return Key;
     }
+
+    public void setKey(String key) {
+        Key = key;
+    }
+
 }

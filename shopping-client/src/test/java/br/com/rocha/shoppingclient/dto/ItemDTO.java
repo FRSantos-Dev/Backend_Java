@@ -1,8 +1,7 @@
-package br.com.rocha.shoppingapi.dto;
+package br.com.rocha.shoppingclient.dto;
 
-import br.com.rocha.shoppingapi.model.Item;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class ItemDTO {
 
@@ -27,12 +26,4 @@ public class ItemDTO {
         this.price = price;
     }
 
-    public static ItemDTO convert(Item item) {
-
-        ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setProductIdentifier(item.getProductIdentifier());
-        itemDTO.setPrice(item.getPrice());
-
-        return itemDTO;
-    }
 }
