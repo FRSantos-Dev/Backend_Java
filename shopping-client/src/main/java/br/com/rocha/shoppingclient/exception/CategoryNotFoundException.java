@@ -1,4 +1,4 @@
-package br.com.rocha.shoppingclient.error;
+package br.com.rocha.shoppingclient.exception;
 
 public class CategoryNotFoundException extends RuntimeException {
 }

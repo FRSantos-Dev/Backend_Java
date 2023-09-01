@@ -1,4 +1,4 @@
-package br.com.rocha.shoppingapi.dto;
+package br.com.rocha.shoppingclient.dto;
 
 public class ShopReportDTO {
     

@@ -1,8 +1,6 @@
-package br.com.rocha.productapi.dto;
+package br.com.rocha.shoppingclient.dto;
 
 import javax.validation.constraints.NotNull;
-
-import br.com.rocha.productapi.model.Category;
 
 public class CategoryDTO {
 
@@ -25,13 +23,4 @@ public class CategoryDTO {
     public void setName(String name) {
         this.name = name;
     }
-
-    public static CategoryDTO convert(Category category) {
-
-        CategoryDTO categoryDTO = new CategoryDTO();
-        categoryDTO.setId(category.getId());
-        categoryDTO.setName(category.getName());
-        return categoryDTO;
-    }
-
 }

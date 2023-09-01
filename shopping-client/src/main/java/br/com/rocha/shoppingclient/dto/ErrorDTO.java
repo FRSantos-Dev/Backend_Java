@@ -34,5 +34,4 @@ public class ErrorDTO {
     public void setTimestamp(final Date timestamp) {
         this.timestamp = timestamp;
     }
-
 }

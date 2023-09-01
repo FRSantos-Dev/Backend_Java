@@ -1,11 +1,10 @@
-package br.com.rocha.shoppingapi.dto;
+package br.com.rocha.shoppingclient.dto;
 
 import java.util.Date;
 import java.util.List;
 
-import br.com.rocha.shoppingapi.model.Shop;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class ShopDTO {
 
@@ -49,14 +48,4 @@ public class ShopDTO {
     public void setItems(List<ItemDTO> items) {
         this.items = items;
     }
-
-    public static ShopDTO convert(Shop shop) {
-
-        ShopDTO shopDTO = new ShopDTO();
-        shopDTO.setUserIdentifier(shop.getUserIdentifier());
-        shopDTO.setTotal(shop.getTotal());
-
-        return shopDTO;
-    }
-
 }

@@ -6,6 +6,8 @@ import java.util.List;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.rocha.shoppingclient.ItemDTO;
+
 public class ShopDTO {
 
     @NotBlank
