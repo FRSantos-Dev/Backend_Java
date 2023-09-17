@@ -1,10 +1,11 @@
-package br.com.sanchez.backend.java.service;
+package br.com.rocha.userapi.service;
 
-import br.com.sanchez.backend.java.converter.DTOConverter;
-import br.com.sanchez.backend.java.dto.UserDTO;
-import br.com.sanchez.backend.java.exception.UserNotFoundException;
-import br.com.sanchez.backend.java.model.User;
-import br.com.sanchez.backend.java.repository.UserRepository;
+import br.com.rocha.shoppingclient.dto.UserDTO;
+import br.com.rocha.shoppingclient.exception.UserNotFoundException;
+import br.com.rocha.userapi.converter.DTOConverter;
+
+import br.com.rocha.userapi.model.User;
+import br.com.rocha.userapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,20 +22,20 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<UserDTO> getAll() {
-        List<User> usuarios = userRepository.findAll();
-        return usuarios.stream().map(DTOConverter::convert).collect(Collectors.toList());
+        List<User> users = userRepository.findAll();
+        return users.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
     public UserDTO findById(long userId) {
-        Optional<User> usuario = userRepository.findById(userId);
-        if (usuario.isPresent()) {
-            return DTOConverter.convert(usuario.get());
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+            return DTOConverter.convert(user.get());
         }
         return null;
     }
 
     public UserDTO save(UserDTO userDTO) {
-        userDTO.setDataCadastro(new Date());
+        userDTO.setRegistryDate(new Date());
         userDTO.setKey(UUID.randomUUID().toString());
         User user = userRepository.save(User.convert(userDTO));
         return DTOConverter.convert(user);
@@ -56,9 +57,9 @@ public class UserService {
         throw new UserNotFoundException();
     }
 
-    public List<UserDTO> queryByNome(String nome) {
-        List<User> usuarios = userRepository.queryByNomeLike(nome);
-        return usuarios.stream().map(DTOConverter::convert).collect(Collectors.toList());
+    public List<UserDTO> queryByName(String name) {
+        List<User> users = userRepository.queryByNameLike(name);
+        return users.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
 }

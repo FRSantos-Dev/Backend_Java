@@ -1,6 +1,6 @@
-package br.com.sanchez.backend.java.repository;
+package br.com.rocha.userapi.repository;
 
-import br.com.sanchez.backend.java.model.User;
+import br.com.rocha.userapi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByCpfAndKey(String cpf, String key);
-    List<User> queryByNomeLike(String nome);
+    List<User> queryByNameLike(String name);
 
 }

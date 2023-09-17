@@ -1,7 +1,9 @@
-package br.com.sanchez.backend.java.controller;
+package br.com.rocha.userapi.controller;
 
-import br.com.sanchez.backend.java.dto.UserDTO;
-import br.com.sanchez.backend.java.service.UserService;
+
+
+import br.com.rocha.shoppingclient.dto.UserDTO;
+import br.com.rocha.userapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,8 +41,8 @@ public class UserController {
     }
 
     @GetMapping("/users/search")
-    public List<UserDTO> queryByNome(@RequestParam(name = "nome", required = true) String nome) {
-        return userService.queryByNome(nome);
+    public List<UserDTO> queryByName(@RequestParam(name = "name", required = true) String name) {
+        return userService.queryByName(name);
     }
 
 }

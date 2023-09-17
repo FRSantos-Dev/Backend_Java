@@ -1,8 +1,12 @@
-package br.com.sanchez.backend.java.model;
+package br.com.rocha.userapi.model;
 
-import br.com.sanchez.backend.java.dto.UserDTO;
 
-import javax.persistence.*;
+import br.com.rocha.shoppingclient.dto.UserDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.Date;
 
 @Entity
@@ -11,12 +15,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String nome;
+    private String name;
     private String cpf;
-    private String endereco;
+    private String adress;
     private String email;
-    private String telefone;
-    private Date dataCadastro;
+    private String telephone;
+    private Date registryDate;
     private String key;
 
     public User() {
@@ -24,12 +28,12 @@ public class User {
 
     public static User convert(final UserDTO userDTO) {
         User user = new User();
-        user.setNome(userDTO.getNome());
-        user.setEndereco(userDTO.getEndereco());
+        user.setName(userDTO.getName());
+        user.setAdress(userDTO.getAdress());
         user.setCpf(userDTO.getCpf());
         user.setEmail(userDTO.getEmail());
-        user.setTelefone(userDTO.getTelefone());
-        user.setDataCadastro(userDTO.getDataCadastro());
+        user.setTelephone(userDTO.getTelephone());
+        user.setRegistryDate(userDTO.getRegistryDate());
         user.setKey(userDTO.getKey());
         return user;
     }
@@ -42,12 +46,12 @@ public class User {
         this.id = id;
     }
 
-    public String getNome() {
-        return this.nome;
+    public String getName() {
+        return this.name;
     }
 
-    public void setNome(final String nome) {
-        this.nome = nome;
+    public void setName(final String name) {
+        this.name = name;
     }
 
     public String getCpf() {
@@ -58,12 +62,12 @@ public class User {
         this.cpf = cpf;
     }
 
-    public String getEndereco() {
-        return this.endereco;
+    public String getAdress() {
+        return this.adress;
     }
 
-    public void setEndereco(final String endereco) {
-        this.endereco = endereco;
+    public void setAdress(final String adress) {
+        this.adress = adress;
     }
 
     public String getEmail() {
@@ -74,20 +78,20 @@ public class User {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return this.telefone;
+    public String getTelephone() {
+        return this.telephone;
     }
 
-    public void setTelefone(final String telefone) {
-        this.telefone = telefone;
+    public void setTelephone(final String telephone) {
+        this.telephone = telephone;
     }
 
-    public Date getDataCadastro() {
-        return this.dataCadastro;
+    public Date getRegistryDate() {
+        return this.registryDate;
     }
 
-    public void setDataCadastro(final Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setRegistryDate(final Date registryDate) {
+        this.registryDate = registryDate;
     }
 
     public String getKey() {

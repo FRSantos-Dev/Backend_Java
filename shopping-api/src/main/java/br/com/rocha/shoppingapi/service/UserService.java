@@ -1,5 +1,7 @@
 package br.com.rocha.shoppingapi.service;
 
+import br.com.rocha.shoppingclient.dto.UserDTO;
+import br.com.rocha.shoppingclient.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
