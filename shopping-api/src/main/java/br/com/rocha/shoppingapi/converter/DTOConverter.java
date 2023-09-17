@@ -1,5 +1,10 @@
 package br.com.rocha.shoppingapi.converter;
 
+import br.com.rocha.shoppingapi.model.Item;
+import br.com.rocha.shoppingapi.model.Shop;
+import br.com.rocha.shoppingclient.dto.ItemDTO;
+import br.com.rocha.shoppingclient.dto.ShopDTO;
+
 import java.util.stream.Collectors;
 
 public class DTOConverter {

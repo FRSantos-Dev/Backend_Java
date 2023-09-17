@@ -1,15 +1,19 @@
 package br.com.rocha.shoppingapi.service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.apache.el.stream.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import br.com.rocha.shoppingapi.converter.DTOConverter;
 import br.com.rocha.shoppingapi.model.Shop;
 import br.com.rocha.shoppingapi.repository.ShopRepository;
+import br.com.rocha.shoppingclient.dto.ItemDTO;
+import br.com.rocha.shoppingclient.dto.ProductDTO;
+import br.com.rocha.shoppingclient.dto.ShopDTO;
+import br.com.rocha.shoppingclient.dto.ShopReportDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ShopService {
@@ -56,13 +60,13 @@ public class ShopService {
         return DTOConverter.convert(shop);
     }
 
-    public List<ShopDTO> getShopByFilter(final Date dataInicio, final Date dataFim, final Float valorMinimo) {
-        List<Shop> shops = shopRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
+    public List<ShopDTO> getShopByFilter(final Date startDate, final Date endDate, final Float minValue) {
+        List<Shop> shops = shopRepository.getShopByFilters(startDate, endDate, minValue);
         return shops.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
-    public ShopReportDTO getReportByDate(final Date dataInicio, final Date dataFim) {
-        return shopRepository.getReportByDate(dataInicio, dataFim);
+    public ShopReportDTO getReportByDate(final Date startDate, final Date endDate) {
+        return shopRepository.getReportByDate(startDate, endDate);
     }
 
     private boolean validateProducts(final List<ItemDTO> items) {
@@ -71,7 +75,7 @@ public class ShopService {
             if (productDTO == null) {
                 return false;
             }
-            item.setPrice(productDTO.getPreco());
+            item.setPrice(productDTO.getPrice());
         }
         return true;
     }

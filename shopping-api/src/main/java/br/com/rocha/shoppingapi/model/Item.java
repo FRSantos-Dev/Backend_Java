@@ -1,5 +1,6 @@
 package br.com.rocha.shoppingapi.model;
 
+import br.com.rocha.shoppingclient.dto.ItemDTO;
 import jakarta.persistence.Embeddable;
 
 @Embeddable

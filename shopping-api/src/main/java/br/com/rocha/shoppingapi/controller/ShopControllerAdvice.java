@@ -1,12 +1,15 @@
 package br.com.rocha.shoppingapi.controller;
 
-import java.util.Date;
-
+import br.com.rocha.shoppingclient.dto.ErrorDTO;
+import br.com.rocha.shoppingclient.exception.ProductNotFoundException;
+import br.com.rocha.shoppingclient.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.util.Date;
 
 @ControllerAdvice(basePackages = "br.com.rocha.shoppingapi.java.controller")
 public class ShopControllerAdvice {

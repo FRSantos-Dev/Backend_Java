@@ -1,12 +1,13 @@
 package br.com.rocha.shoppingapi.repository;
 
-import java.util.Date;
-import java.util.List;
-
 import br.com.rocha.shoppingapi.model.Shop;
+import br.com.rocha.shoppingclient.dto.ShopReportDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+
+import java.util.Date;
+import java.util.List;
 
 public class ReportRepositoryImpl implements ReportRepository {
 

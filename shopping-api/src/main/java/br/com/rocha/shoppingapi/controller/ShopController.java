@@ -1,17 +1,14 @@
 package br.com.rocha.shoppingapi.controller;
 
-import java.util.Date;
-import java.util.List;
-
+import br.com.rocha.shoppingapi.service.ShopService;
+import br.com.rocha.shoppingclient.dto.ShopDTO;
+import br.com.rocha.shoppingclient.dto.ShopReportDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.List;
 
 
 
@@ -62,7 +59,7 @@ public class ShopController {
     @GetMapping("/shopping/report")
     public ShopReportDTO getReportBydate(@RequestParam(name = "startDate", required = true)
                                             @DateTimeFormat(pattern = "dd/MM/yyyy") Date startDate,
-                                            @RequestParam(name = "endDate", required = true)
+                                         @RequestParam(name = "endDate", required = true)
                                             @DateTimeFormat(pattern = "dd/MM/yyyy") Date endDate) {
         return shopService.getReportByDate(startDate, endDate);
     }

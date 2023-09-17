@@ -1,10 +1,11 @@
 package br.com.rocha.shoppingapi.repository;
 
 
+import br.com.rocha.shoppingapi.model.Shop;
+import br.com.rocha.shoppingclient.dto.ShopReportDTO;
+
 import java.util.Date;
 import java.util.List;
-
-import br.com.rocha.shoppingapi.model.Shop;
 
 public interface ReportRepository {
 
