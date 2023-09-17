@@ -19,8 +19,8 @@ public class UserDTO {
         return this.name;
     }
 
-    public void setNome(final String name) {
-        this.nome = name;
+    public void setName(final String name) {
+        this.name = name;
     }
 
     public String getCpf() {
@@ -35,7 +35,7 @@ public class UserDTO {
         return this.adress;
     }
 
-    public void setEndereco(final String adress) {
+    public void setAdress(final String adress) {
         this.adress = adress;
     }
 

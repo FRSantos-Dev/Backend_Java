@@ -1,5 +1,6 @@
 package br.com.rocha.shoppingclient.dto;
 
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -32,7 +33,7 @@ public class ProductDTO {
     }
 
     public void setName(final String name) {
-        this.nome = name;
+        this.name = name;
     }
 
     public Float getPrice() {
@@ -40,7 +41,7 @@ public class ProductDTO {
     }
 
     public void setPrice(final Float price) {
-        this.preco = price;
+        this.price = price;
     }
 
     public CategoryDTO getCategory() {
