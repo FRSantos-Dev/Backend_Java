@@ -3,6 +3,9 @@ package br.com.rocha.productapi.controller;
 import java.util.Date;
 import java.util.List;
 
+import br.com.rocha.shoppingclient.dto.ErrorDTO;
+import br.com.rocha.shoppingclient.exception.CategoryNotFoundException;
+import br.com.rocha.shoppingclient.exception.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

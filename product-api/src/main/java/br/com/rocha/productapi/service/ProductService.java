@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import br.com.rocha.shoppingclient.dto.ProductDTO;
+import br.com.rocha.shoppingclient.exception.CategoryNotFoundException;
+import br.com.rocha.shoppingclient.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

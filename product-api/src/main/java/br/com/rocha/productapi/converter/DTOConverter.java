@@ -1,6 +1,11 @@
 package br.com.rocha.productapi.converter;
 
 
+import br.com.rocha.productapi.model.Category;
+import br.com.rocha.productapi.model.Product;
+import br.com.rocha.shoppingclient.dto.CategoryDTO;
+import br.com.rocha.shoppingclient.dto.ProductDTO;
+
 public class DTOConverter {
 
     public static CategoryDTO convert(final Category category) {

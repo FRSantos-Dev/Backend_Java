@@ -1,5 +1,6 @@
 package br.com.rocha.productapi.model;
 
+import br.com.rocha.shoppingclient.dto.CategoryDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,7 +29,7 @@ public class Category {
         return this.name;
     }
 
-    public void setNome(final String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

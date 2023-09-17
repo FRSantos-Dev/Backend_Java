@@ -1,5 +1,6 @@
 package br.com.rocha.productapi.model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
