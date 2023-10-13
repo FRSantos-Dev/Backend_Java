@@ -5,7 +5,7 @@
 ## 🏁 Development Status
  Project under development 🚧
 
-## 💻 Plataform
+## 💻 Platform
 Windows
 
 ## 📝 Project Description
