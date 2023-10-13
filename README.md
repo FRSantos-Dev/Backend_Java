@@ -16,7 +16,7 @@ The shopping-api provides services for users to make purchases, which in turn in
 
 ![image](https://user-images.githubusercontent.com/16382981/119489556-316a5a00-bd32-11eb-9734-521193c5243d.png)
 
-## Environment
+## 🔨 Environment
 [IntelliJ IDEA](https://www.jetbrains.com/pt-br/idea/download), [Maven](https://maven.apache.org), 
 [Docker](https://www.docker.com/products/docker-desktop), [pgAdmin](https://www.pgadmin.org/download) and 
 [PostgreSQL](https://www.postgresql.org/download) (if you prefer, can use the [image](https://hub.docker.com/_/postgres) docker of PostgreSQL)
@@ -151,7 +151,7 @@ On Windows, just edit the file C:\windows\system32\drivers\etc\hosts and add the
 
 Okay, now you can access the APIs using shopping.com/users, shopping.com/products, etc.
 
-# Autores
+# Authors
 
 | [<img src="https://gitlab.com/uploads/-/system/user/avatar/13638955/avatar.png?width=400" width=100><br><sub>Felipe Rocha dos Santos</sub><br><sub><i>Back-end Developer</i></sub>](https://github.com/FRSantos-Dev) |
 | :---: |
