@@ -1,6 +1,6 @@
-# Back-end Java: Microsservices, Spring Boot and Kubernetes.  
+# Back-end Java: Microsservices, Spring Boot and Kubernetes
 
-> 
+
 
 ## 🏁 Development Status
  Project under development 🚧
@@ -19,20 +19,22 @@ The shopping-api provides services for users to make purchases, which in turn in
 ## Environment
 [IntelliJ IDEA](https://www.jetbrains.com/pt-br/idea/download), [Maven](https://maven.apache.org), 
 [Docker](https://www.docker.com/products/docker-desktop), [pgAdmin](https://www.pgadmin.org/download) and 
-[PostgreSQL](https://www.postgresql.org/download) (if you prefer, can use the[image](https://hub.docker.com/_/postgres) docker of PostgreSQL)
+[PostgreSQL](https://www.postgresql.org/download) (if you prefer, can use the [image](https://hub.docker.com/_/postgres) docker of PostgreSQL)
 
 `
 docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=mypassword postgres
 `
 
-## 🔨 Requisitos do projeto
-* 
-* 
-* 
-
-## ✏️ Languages and frameworks
+## ✏️ Languages, frameworks, tools
 * Java
-* JavaFX
+* Spring Boot
+* Docker
+* Kubernetes
+* Nginx
+* PostgreSQL
+
+
+
   
 ## 📚 Library and dependencies
 * Spring Boot, Spring Web, Spring Data, [Flyway](https://github.com/flyway/flyway) and [PostgreSQL](https://mvnrepository.com/artifact/org.postgresql/postgresql)
@@ -148,21 +150,6 @@ On Windows, just edit the file C:\windows\system32\drivers\etc\hosts and add the
 ```
 
 Okay, now you can access the APIs using shopping.com/users, shopping.com/products, etc.
-
-* Geração release:
-    * 
-    * 
-    > 
-
-    *  
-    >
-
-
-## 📁 Acesso ao projeto
-- `Código fonte`: 
-- `Documentação`:
-
-## ➕ Mais informações
 
 # Autores
 
